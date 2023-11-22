@@ -3,6 +3,7 @@ from dash import Dash, html, dcc,  Input, Output, callback
 import plotly.express as px
 import pandas as pd
 import dash_bootstrap_components as dbc
+#import pickle5 as pickle
 
 
 ### Import data disini
@@ -13,7 +14,11 @@ import json
 with open('data_cache/Indonesia_provinces.geojson', 'r') as geojson_file:
     geojson_data = json.load(geojson_file)
 
-shipping = pd.read_pickle('data_input/shipping_clean')
+#pb = pickle.loads(b'data_input/shipping_clean')
+#print(pb)
+
+#shipping = pd.read_pickle('data_input/shipping_clean')
+shipping = pd.read_csv('data_input/shipping_data.csv')
 
 # --------------------------- CARD --------------------------------------
 ### Info card disini
